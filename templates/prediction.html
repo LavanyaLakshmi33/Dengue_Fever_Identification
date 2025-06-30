@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dengue Fever Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form action="/prediction" method="post">
+        <label for="Gender">Gender</label>
+        <select name="Gender">
+            <option value="0">Male</option>
+            <option value="1">Female</option>
+        </select><br>
+
+        <label for="Age">Age</label>
+        <input type="number" min="1.0" max="100.0" name="Age"><br>
+
+        <label for="Haemoglobin">Hemoglobin</label>
+        <input type="number" min="1.0" name="Haemoglobin"><br>
+
+        <label for="ESR">ESR</label>
+        <input type="number" min="1.0" name="ESR"><br>
+
+        <label for="WBC">WBC</label>
+        <input type="number" min="1.0" name="WBC"><br>
+
+        <label for="Neutrophil">Neutrophil</label>
+        <input type="number" min="1" name="Neutrophil"><br>
+
+        <label for="Lymphocyte">Lymphocyte</label>
+        <input type="number" min="1.0" name="Lymphocyte"><br>
+
+        <label for="Monocyte">Monocyte</label>
+        <input type="number" min="1.0" name="Monocyte"><br>
+
+        <label for="Eosinophil">Eosinophil</label>
+        <input type="number" min="1.0" name="Eosinophil"><br>
+
+        <label for="Basophil">Basophil</label>
+        <input type="number" min="1.0" name="Basophil"><br>
+
+        <label for="RBC">RBC</label>
+        <input type="number" min="1.0" name="RBC"><br>
+
+        <label for="Platelets">Platelets</label>
+        <input type="number" min="1" name="Platelets"><br><br>
+
+        <input type="submit" value="Predict">
+
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+        {% endif %}
+    </form>
+</body>
+</html>
